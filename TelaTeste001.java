@@ -5,6 +5,10 @@ import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -58,6 +62,21 @@ public class TelaTeste001 extends JFrame
                 JOptionPane.showMessageDialog(null, mensagem);
             }    
         });
+        //Botão testa conexão JDBC
+        JButton jbtnConecta = new JButton();
+        jbtnConecta.setText("Conceta");
+        // tratamento de evento
+        jbtnConecta.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                try{
+                    Connection conexao = DriverManager.getConnection("jdbc:mariadb://localhost/jpxbd?user=pi&password=flapi123");
+                    JOptionPane.showMessageDialog(null, "Conectou!!!");
+                    conexao.close();
+                } catch(SQLException e) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+        });
         
         
 
@@ -89,6 +108,10 @@ public class TelaTeste001 extends JFrame
         gbc.gridx = 0;
         gbc.gridy = 3;
         painel.add(jbtnInserir, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        painel.add(jbtnConecta, gbc);
+
        
         this.add(painel);
         this.setVisible(true);
