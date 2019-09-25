@@ -68,13 +68,7 @@ public class TelaTeste001 extends JFrame
         // tratamento de evento
         jbtnConecta.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                try{
-                    Connection conexao = DriverManager.getConnection("jdbc:mariadb://localhost/jpxbd?user=pi&password=flapi123");
-                    JOptionPane.showMessageDialog(null, "Conectou!!!");
-                    conexao.close();
-                } catch(SQLException e) {
-                    JOptionPane.showMessageDialog(null, e);
-                }
+                Connection con = new ConexaoBD().conectar();   
             }
         });
         
