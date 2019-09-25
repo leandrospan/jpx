@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -68,7 +69,12 @@ public class TelaTeste001 extends JFrame
         // tratamento de evento
         jbtnConecta.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                Connection con = new ConexaoBD().conectar();   
+                Clientes cliente = new Clientes();
+                cliente.setCodigo(Integer.parseInt(jtfCodigo.getText()));
+                cliente.setNome(jtfNome.getText());
+                CientesDAO cliDAO = new CientesDAO();
+                cliDAO.adiciona(cliente);
+                JOptionPane.showMessageDialog(null, "Ciente Salvo!");
             }
         });
         
