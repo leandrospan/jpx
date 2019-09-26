@@ -77,6 +77,17 @@ public class TelaTeste001 extends JFrame
                 JOptionPane.showMessageDialog(null, "Ciente Salvo!");
             }
         });
+        //Botão que clama a tela de teste de tabela
+        JButton jbtnTabela = new JButton();
+        jbtnTabela.setText("Tabela");
+        // tratamento de evento
+        jbtnTabela.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                TelaTeste002 tt2 = new TelaTeste002();
+                tt2.setVisible(true);
+            }
+        });
+
         
         
 
@@ -104,13 +115,21 @@ public class TelaTeste001 extends JFrame
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
+        gbc.gridwidth = 2;
         painel.add(jtfNome, gbc);
         gbc.gridx = 0;
         gbc.gridy = 3;
+        gbc.gridwidth = 1;        
         painel.add(jbtnInserir, gbc);
         gbc.gridx = 1;
         gbc.gridy = 3;
+        gbc.gridwidth = 1;        
         painel.add(jbtnConecta, gbc);
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;        
+        painel.add(jbtnTabela, gbc);
+
 
        
         this.add(painel);
