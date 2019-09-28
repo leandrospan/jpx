@@ -16,8 +16,10 @@ public class ConexaoBD
     public Connection conectar(){ 
 
         try{
-            Class.forName("org.mariadb.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mariadb://localhost/jpxbd?user=pi&password=flapi123");
+            //Class.forName("org.mariadb.jdbc.Driver");
+            //conexao = DriverManager.getConnection("jdbc:mariadb://localhost/jpxbd?user=pi&password=flapi123");
+            Class.forName("com.mysql.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/jpxbd?user=root&password=etec");
             JOptionPane.showMessageDialog(null, "Conectou!!!");
             return conexao;
         } catch(SQLException e) {

@@ -1,6 +1,7 @@
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -12,6 +13,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -42,7 +45,9 @@ public class TelaTeste002 extends JFrame
             {"Maria Eduarda", "28", "Feminino"},
             {"Gabriela", "22", "Feminino"}
         };
-        JTable tabela = new JTable(dados, colunas);
+        JTable tabela = new JTable();
+        DefaultTableModel modelo = new DefaultTableModel(dados, colunas);
+        tabela.setModel(modelo);
         JScrollPane scroll = new JScrollPane();
         scroll.setViewportView(tabela);
         
@@ -53,6 +58,26 @@ public class TelaTeste002 extends JFrame
         JLabel jlblSexo = new JLabel("Sexo: ");
         JTextField jtfSexo = new JTextField(10);
         JButton jbtnInsere = new JButton("Inserir");  
+        jbtnInsere.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                //Adicionar nova linha
+                String[] linha = new String[]{jtfNome.getText(), jtfIdade.getText(), jtfSexo.getText()};
+                modelo.addRow(linha);
+                //atualiza a nova linha na tabela
+                modelo.fireTableDataChanged();
+            }
+        });
+        JButton jbtnRemove = new JButton("Remover");  
+        jbtnRemove.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                //Pega linha selecionada
+                int linha = tabela.getSelectedRow();
+                if(linha != -1) {
+                    modelo.removeRow(linha);
+                }    
+                modelo.fireTableDataChanged();
+            }
+        });
         JPanel painel01 = new JPanel();
         JPanel painel02 = new JPanel();
 
@@ -94,6 +119,9 @@ public class TelaTeste002 extends JFrame
         gbc.gridx = 0;
         gbc.gridy = 3;
         painel02.add(jbtnInsere, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        painel02.add(jbtnRemove, gbc);
         this.add(painel01);
         this.add(painel02);
         
