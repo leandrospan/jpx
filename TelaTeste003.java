@@ -19,17 +19,17 @@ import java.awt.event.ActionEvent;
 
 
 /**
- * Escreva a descrição da classe TelaTeste002 aqui.
+ * Escreva a descrição da classe TelaTeste003 aqui.
  * 
  * @author Leandro Spanghero 
  * @version v1.0
  */
-public class TelaTeste002 extends JFrame
+public class TelaTeste003 extends JFrame
 {
     /**
-     * COnstrutor para objetos da classe TelaTeste002
+     * COnstrutor para objetos da classe TelaTeste003
      */
-    public TelaTeste002()
+    public TelaTeste003()
     {
         //Tamanho
         this.setSize(400, 400);

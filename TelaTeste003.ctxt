@@ -1,13 +1,11 @@
 #BlueJ class context
 comment0.params=
-comment0.target=TelaTeste001()
-comment0.text=\n\ COnstrutor\ para\ objetos\ da\ classe\ TelaTeste001\n
+comment0.target=TelaTeste003()
+comment0.text=\n\ COnstrutor\ para\ objetos\ da\ classe\ TelaTeste003\n
 comment1.params=ae
 comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment2.params=ae
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=ae
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment4.params=ae
-comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=5
+numComments=4

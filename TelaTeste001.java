@@ -65,16 +65,16 @@ public class TelaTeste001 extends JFrame
         });
         //Botão testa conexão JDBC
         JButton jbtnConecta = new JButton();
-        jbtnConecta.setText("Conceta");
+        jbtnConecta.setText("Concecta");
         // tratamento de evento
         jbtnConecta.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 Clientes cliente = new Clientes();
                 cliente.setCodigo(Integer.parseInt(jtfCodigo.getText()));
                 cliente.setNome(jtfNome.getText());
-                CientesDAO cliDAO = new CientesDAO();
+                ClientesDAO cliDAO = new ClientesDAO();
                 cliDAO.adiciona(cliente);
-                JOptionPane.showMessageDialog(null, "Ciente Salvo!");
+                JOptionPane.showMessageDialog(null, "Cliente Salvo!");
             }
         });
         //Botão que clama a tela de teste de tabela
@@ -85,6 +85,16 @@ public class TelaTeste001 extends JFrame
             public void actionPerformed(ActionEvent ae){
                 TelaTeste002 tt2 = new TelaTeste002();
                 tt2.setVisible(true);
+            }
+        });
+        //Botão que clama a tela de teste de tabela com AbstractTableModel
+        JButton jbtnTabelaAT = new JButton();
+        jbtnTabelaAT.setText("TabelaAT");
+        // tratamento de evento
+        jbtnTabelaAT.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                TelaTeste003 tt3 = new TelaTeste003();
+                tt3.setVisible(true);
             }
         });
 
@@ -115,7 +125,7 @@ public class TelaTeste001 extends JFrame
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
-        gbc.gridwidth = 2;
+        gbc.gridwidth = 3;
         painel.add(jtfNome, gbc);
         gbc.gridx = 0;
         gbc.gridy = 3;
@@ -129,6 +139,10 @@ public class TelaTeste001 extends JFrame
         gbc.gridy = 3;
         gbc.gridwidth = 1;        
         painel.add(jbtnTabela, gbc);
+        gbc.gridx = 3;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;        
+        painel.add(jbtnTabelaAT, gbc);
 
 
        

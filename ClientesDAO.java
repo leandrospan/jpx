@@ -10,10 +10,10 @@ import javax.swing.JOptionPane;
  * @author Leandro Spanghero 
  * @version v1.0
  */
-public class CientesDAO
+public class ClientesDAO
 {
     private Connection conexao;
-    public CientesDAO()
+    public ClientesDAO()
     {
         this.conexao = new ConexaoBD().conectar();
     }

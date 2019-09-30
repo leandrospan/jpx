@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=CientesDAO()
+comment0.target=ClientesDAO()
 comment1.params=cliente
 comment1.target=void\ adiciona(Clientes)
 numComments=2
