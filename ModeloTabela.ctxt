@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ModeloTabela()
+comment0.text=\n\ COnstrutor\ para\ objetos\ da\ classe\ ModeloTabela\n
+comment1.params=c
+comment1.target=void\ addRow(Clientes)
+comment2.params=num
+comment2.target=java.lang.String\ getColumnName(int)
+comment3.params=
+comment3.target=int\ getRowCount()
+comment4.params=
+comment4.target=int\ getColumnCount()
+comment5.params=linha\ coluna
+comment5.target=java.lang.Object\ getValueAt(int,\ int)
+comment6.params=aValue\ linha\ coluna
+comment6.target=void\ setValueAt(java.lang.Object,\ int,\ int)
+comment7.params=linha
+comment7.target=void\ removeRow(int)
+comment8.params=linha
+comment8.target=Clientes\ get(int)
+comment9.params=linha\ coluna
+comment9.target=boolean\ isCellEditable(int,\ int)
+numComments=10

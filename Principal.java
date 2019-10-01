@@ -19,7 +19,9 @@ public class Principal
 
     public static void main(String[] args)
     {
-        TelaTeste001 tt001 = new TelaTeste001();
-        tt001.setVisible(true);
+        //TelaTeste001 tt001 = new TelaTeste001();
+        //tt001.setVisible(true);
+        Home h = new Home();
+        h.setVisible(true);
     }
 }

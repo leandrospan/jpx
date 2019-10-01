@@ -1,7 +1,8 @@
 
 import javax.swing.table.AbstractTableModel;
 
-import java.awt.
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Escreva a descrição da classe ModeloTabela aqui.
