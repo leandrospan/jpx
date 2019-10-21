@@ -29,17 +29,16 @@ public class CadCliente extends JFrame
     public CadCliente() throws ParseException
     {
         this.setTitle("-- QUIMERA | ERP -- CADASTRO DE CLIENTES ");
-        this.setSize(600, 600);
+        this.setSize(300, 150);
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
         JPanel jpnlHeader = new JPanel();
-        jpnlHeader.setLayout(new FlowLayout());
-        /*jpnlHeader.setLayout(new GridBagLayout());
+        jpnlHeader.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(2, 2, 2, 2);
         jpnlHeader.setPreferredSize(new Dimension(600, 298));
-        */
+        
         JLabel jlblTitulo = new JLabel("CADASTRO DE CLIENTES");
         jlblTitulo.setFont(new Font("Serif", Font.BOLD, 22));
         JLabel jlblCodigoCli = new JLabel("Código: ");
@@ -53,15 +52,43 @@ public class CadCliente extends JFrame
         JFormattedTextField jftfDataNascCli = new JFormattedTextField(mfDataNascCli);
         jftfDataNascCli.setColumns(7);
         
-        jpnlHeader.add(jlblTitulo);
-        jpnlHeader.add(jlblCodigoCli);
-        jpnlHeader.add(jtfCodigoCli);
-        jpnlHeader.add(jlblNomeCli);
-        jpnlHeader.add(jtfNomeCli);
-        jpnlHeader.add(jlblSobrenomeCli);
-        jpnlHeader.add(jtfSobrenomeCli);        
-        jpnlHeader.add(jlblDataNascCli);
-        jpnlHeader.add(jftfDataNascCli);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 3;
+        jpnlHeader.add(jlblTitulo, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.WEST;
+        jpnlHeader.add(jlblCodigoCli, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;        
+        gbc.anchor = GridBagConstraints.EAST;        
+        jpnlHeader.add(jtfCodigoCli, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 2;        
+        gbc.anchor = GridBagConstraints.WEST;        
+        jpnlHeader.add(jlblNomeCli, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 2;        
+        gbc.anchor = GridBagConstraints.EAST;        
+        jpnlHeader.add(jtfNomeCli, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 3;        
+        gbc.anchor = GridBagConstraints.WEST;        
+        jpnlHeader.add(jlblSobrenomeCli, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 3;        
+        gbc.anchor = GridBagConstraints.EAST;        
+        jpnlHeader.add(jtfSobrenomeCli, gbc);        
+        gbc.gridx = 0;
+        gbc.gridy = 4;        
+        gbc.anchor = GridBagConstraints.WEST;        
+        jpnlHeader.add(jlblDataNascCli, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 4;        
+        gbc.anchor = GridBagConstraints.EAST;        
+        jpnlHeader.add(jftfDataNascCli, gbc);
         
         this.add(jpnlHeader);
         this.setVisible(true);
